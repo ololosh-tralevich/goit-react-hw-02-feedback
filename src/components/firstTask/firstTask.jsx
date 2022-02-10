@@ -3,11 +3,11 @@ import styles from './firstTask.module.css';
 const FirstTask = () => {
   return (
     <container className={styles.mainContainer}>
-      <div>
-        <h2>Please оставьте otzыв</h2>
-        <button>Good</button>
-        <button>Neutral</button>
-        <button>Not good</button>
+      <div className={styles.feedbackBlock}>
+        <h2>Please leave feedback</h2>
+        <button className={styles.ratingButton}>Good</button>
+        <button className={styles.ratingButton}>Neutral</button>
+        <button className={styles.ratingButton}>Bad</button>
       </div>
       <div>СТАТИСТИКА</div>
     </container>

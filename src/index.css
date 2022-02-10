@@ -19,3 +19,7 @@ div#root {
   justify-content: center;
   padding: 30px;
 }
+
+button {
+  cursor: pointer;
+}
