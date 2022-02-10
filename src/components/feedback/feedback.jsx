@@ -1,17 +1,25 @@
-import styles from './firstTask.module.css';
+import styles from './feedback.module.css';
 
-const FirstTask = () => {
+const Feedback = () => {
   return (
-    <container className={styles.mainContainer}>
+    <section className={styles.mainContainer}>
       <div className={styles.feedbackBlock}>
         <h2>Please leave feedback</h2>
         <button className={styles.ratingButton}>Good</button>
         <button className={styles.ratingButton}>Neutral</button>
         <button className={styles.ratingButton}>Bad</button>
       </div>
-      <div>СТАТИСТИКА</div>
-    </container>
+      <div>
+        <h3>STATISTICS</h3>
+      </div>
+    </section>
   );
 };
 
-export default FirstTask;
+export default Feedback;
+
+// state = {
+//   good: 0,
+//   neutral: 0,
+//   bad: 0
+// }

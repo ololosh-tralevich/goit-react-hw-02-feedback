@@ -1,9 +1,5 @@
-import FirstTask from './firstTask/firstTask';
+import Feedback from './feedback/feedback';
 
 export const App = () => {
-  return (
-    <>
-      <FirstTask />
-    </>
-  );
+  return <Feedback />;
 };
