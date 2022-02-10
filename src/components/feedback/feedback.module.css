@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   height: min-content;
   width: 30vw;
   padding: 20px;
-  margin-bottom: 60px;
+  margin-top: 30px;
   box-shadow: 0px 0px 16px 7px rgba(34, 60, 80, 0.27);
 }
 
@@ -34,4 +35,18 @@ h2 {
 
 .ratingButton:last-child {
   margin: 0;
+}
+
+.statBlock {
+  width: 100%;
+}
+
+.ratingBlock {
+  display: flex;
+  justify-content: space-around;
+}
+
+p {
+  font-size: 17px;
+  font-weight: 500;
 }
