@@ -14,7 +14,6 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 
   return (
     <div className={styles.feedbackBlock}>
-      <h2>Please leave feedback</h2>
       {partOfCode}
     </div>
   );
