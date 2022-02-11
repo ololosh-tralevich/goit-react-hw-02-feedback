@@ -10,19 +10,22 @@ class Feedback extends Component {
     bad: 13,
   };
 
+  feedbackBtn(property) {
+    this.setState(prevState => {
+      return { [property]: prevState[property] + 1 };
+    });
+  }
+
   render() {
     return (
       <section className={styles.mainContainer}>
         <div className={styles.feedbackBlock}>
           <h2>Please leave feedback</h2>
-          <button
-            className={styles.ratingButton}
-            onClick={evt => (this.state.good += 1)}
-          >
+          <button className={styles.ratingButton} onClick={() => this.feedbackBtn("good")}>
             Good
           </button>
-          <button className={styles.ratingButton}>Neutral</button>
-          <button className={styles.ratingButton}>Bad</button>
+          <button className={styles.ratingButton} onClick={() => this.feedbackBtn("neutral")}>Neutral</button>
+          <button className={styles.ratingButton} onClick={() => this.feedbackBtn("bad")}>Bad</button>
         </div>
         <div className={styles.statBlock}>
           <h3>STATISTICS</h3>
