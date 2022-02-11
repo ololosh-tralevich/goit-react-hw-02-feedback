@@ -3,6 +3,7 @@ import { Component } from 'react';
 import Section from 'components/section/Section';
 import FeedbackOptions from 'components/feedbackOptions/FeedbackOptions';
 import Statistics from 'components/statistics/Statistics';
+import Notification from 'components/notification/Notification';
 
 import styles from './feedback.module.css';
 // import PropTypes from "prop-types";
@@ -51,7 +52,10 @@ class Feedback extends Component {
             onLeaveFeedback={this.handleIncrement}
           />
         </Section>
-         <Section title={'Statistics'}>
+        <Section title={'Statistics'}>
+          
+          <Notification message={"There is no feedback"} totalRating={totalRating}/>
+
           <Statistics
             good={this.state.good}
             neutral={this.state.neutral}
