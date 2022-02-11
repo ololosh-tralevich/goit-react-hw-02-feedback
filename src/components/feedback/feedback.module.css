@@ -24,7 +24,7 @@ h2 {
   font-size: 17px;
   border-radius: 5px;
   border: 1px solid grey;
-  transition: 50ms all ease;
+  transition: 70ms all ease;
 }
 
 .ratingButton:active {
@@ -36,7 +36,7 @@ h2 {
 .ratingButton:last-child {
   margin: 0;
 }
-
+/* 
 .statBlock {
   width: 100%;
 }
@@ -44,9 +44,11 @@ h2 {
 .ratingBlock {
   display: flex;
   justify-content: space-around;
+  padding: 7px 0;
 }
 
 p {
   font-size: 17px;
   font-weight: 500;
-}
+  margin: 0;
+} */
