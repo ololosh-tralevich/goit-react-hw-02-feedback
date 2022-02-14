@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Notification = ({ message, totalRating }) => {
   if (totalRating) {
     return <></>;
@@ -6,3 +8,8 @@ const Notification = ({ message, totalRating }) => {
 };
 
 export default Notification;
+
+Notification.defaultProps = {
+  message: PropTypes.string.isRequired,
+  totalRating: PropTypes.number.isRequired,
+};

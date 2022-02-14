@@ -6,7 +6,6 @@ import Statistics from 'components/statistics/Statistics';
 import Notification from 'components/notification/Notification';
 
 import styles from './feedback.module.css';
-// import PropTypes from "prop-types";
 
 let totalRating = 0;
 let positivePerc = 100;
@@ -53,8 +52,10 @@ class Feedback extends Component {
           />
         </Section>
         <Section title={'Statistics'}>
-          
-          <Notification message={"There is no feedback"} totalRating={totalRating}/>
+          <Notification
+            message={'There is no feedback'}
+            totalRating={totalRating}
+          />
 
           <Statistics
             good={this.state.good}
@@ -68,17 +69,5 @@ class Feedback extends Component {
     );
   }
 }
-// FriendList.defaultProps = {
-//   friends: [],
-// };
-
-// Feedback.PropTypes = {
-//   state: PropTypes.arrayOf(
-//    PropTypes.shape({
-//     good: PropTypes.number.isRequired,
-//     neutral: PropTypes.number.isRequired,
-//     bad: PropTypes.number.isRequired,}
-//   ))
-// }
 
 export default Feedback;
