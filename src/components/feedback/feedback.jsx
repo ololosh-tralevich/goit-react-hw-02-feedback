@@ -7,9 +7,6 @@ import Notification from 'components/notification/Notification';
 
 import styles from './feedback.module.css';
 
-let totalRating = 0;
-let positivePerc = 100;
-
 class Feedback extends Component {
   state = {
     good: 0,
@@ -29,20 +26,20 @@ class Feedback extends Component {
   };
 
   countTotalFeedback() {
-    this.setState(prevState => {
-      totalRating = prevState.good + prevState.neutral + prevState.bad;
-      return totalRating;
-    });
+    const total = this.state.good + this.state.neutral + this.state.bad;
+    return total;
   }
 
   countPositiveFeedbackPercentage() {
-    this.setState(prevState => {
-      positivePerc = Math.round((prevState.good / totalRating) * 100);
-      return positivePerc;
-    });
+    const positivePerc = Math.round(
+      (this.state.good / this.countTotalFeedback()) * 100
+    );
+    return positivePerc;
   }
 
   render() {
+    const { good, neutral, bad } = this.state;
+
     return (
       <div className={styles.mainContainer}>
         <Section title={'Please leave feedback'}>
@@ -54,15 +51,15 @@ class Feedback extends Component {
         <Section title={'Statistics'}>
           <Notification
             message={'There is no feedback'}
-            totalRating={totalRating}
+            // totalRating={totalRating}
           />
 
           <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
-            total={totalRating}
-            positivePercentage={positivePerc}
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
           />
         </Section>
       </div>
