@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './statistics.module.css';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
-  if (!total) {
-    return <></>;
-  }
   return (
     <div className={styles.statBlock}>
       <div className={styles.ratingBlock}>

@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Notification = ({ message, totalRating }) => {
-  if (totalRating) {
-    return <></>;
-  }
+const Notification = ({ message }) => {
   return <h2>{message}</h2>;
 };
 

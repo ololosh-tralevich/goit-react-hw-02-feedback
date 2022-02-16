@@ -14,11 +14,10 @@ class Feedback extends Component {
     bad: 0,
   };
 
-  handleIncrement = event => {
-    const { name } = event.target;
+  handleIncrement = (property) => {
     this.setState(prevState => {
       return {
-        [name]: prevState[name] + 1,
+        [property]: prevState[property] + 1,
       };
     });
     this.countTotalFeedback();
@@ -49,18 +48,20 @@ class Feedback extends Component {
           />
         </Section>
         <Section title={'Statistics'}>
-          <Notification
-            message={'There is no feedback'}
-            // totalRating={totalRating}
-          />
-
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={this.countTotalFeedback()}
-            positivePercentage={this.countPositiveFeedbackPercentage()}
-          />
+          {this.countTotalFeedback() ? (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
+          ) : (
+            <Notification
+              message={'There is no feedback'}
+              // totalRating={this.countTotalFeedback()}
+            />
+          )}
         </Section>
       </div>
     );
