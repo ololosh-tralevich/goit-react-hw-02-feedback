@@ -8,5 +8,4 @@ export default Notification;
 
 Notification.defaultProps = {
   message: PropTypes.string.isRequired,
-  totalRating: PropTypes.number.isRequired,
 };
